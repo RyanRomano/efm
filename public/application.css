@@ -1,0 +1,27 @@
+/* SCSS goes here */
+body {
+  width: 100%; }
+
+#selected-show-container {
+  width: 100%;
+  border-bottom: 2px solid grey; }
+
+#selected-show {
+  background: green;
+  width: 50%;
+  margin: 0 auto; }
+
+#shows-list {
+  list-style: none; }
+
+.active {
+  background: black; }
+
+li {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background: grey;
+  margin-right: 1em; }
+
+/*# sourceMappingURL=application.css.map */
