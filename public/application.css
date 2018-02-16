@@ -1,4 +1,7 @@
 /* SCSS goes here */
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 980px)";
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 body {
@@ -9,10 +12,11 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid grey; }
+  border-bottom: 1px solid rgb(200,200,200); }
 
 #selected-show {
-  width: 50%;
+  width: 50vw;
+  max-width: 250px;
   margin: 25vw 0;
 }
 
@@ -42,14 +46,15 @@ body {
   width: 100%;
   white-space: nowrap;
   overflow-x: scroll;
+  // background: green;
+  padding-top: 2em;
 }
 
 #shows-list {
   display: block;
   height: 200px;
   list-style: none; 
-  margin-left: 10vw;
-  margin-top: 5em;
+  margin-left: 2vw;
 }
 
 .active {
@@ -59,8 +64,8 @@ body {
   display: block;
   /* float: left; */
   position: relative;
-  top: 100px;
-  font-size: 2em; 
+  top: 8vw;
+  font-size: 3.5vw; 
   /* background: orange;  */
   font-weight: 100;
 }
@@ -68,12 +73,69 @@ body {
 li {
   vertical-align: top;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 10vw;
+  width: 10vw;
   background: rgb(229, 229, 229);
-  margin-right: 17vw; 
+  margin-right: 15vw; 
   justify-content: center;
   align-items: center;
 }
 
 /*# sourceMappingURL=application.css.map */
+
+@media screen and (min-width: 980px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #selected-show-container {
+    order:2;
+    border-bottom: none;
+    border-top: 1px solid rgb(200,200,200);
+    padding-top: 5em;
+  }
+
+  #selected-show {
+    width: 17.5%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #selected-show h1 {
+    font-size: 1em;
+  }
+
+  #selected-show h3 {
+    font-size: .5em;
+  }
+
+  #shows-list-container {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    order:1;
+    padding-top: 1em;
+    padding-bottom: 0;
+  }
+
+  #shows-list {
+    padding-left:  px;
+    text-align: center;
+    margin-top: 0em;
+    margin-left: 0;
+    height: 65px;
+  }
+
+
+  li {
+    height: 40px;
+    width: 40px;
+    margin-right: 50px;
+  }
+
+  #after {
+    font-size: 1em;
+    top: 40px;
+  }
+}

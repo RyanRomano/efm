@@ -1,19 +1,13 @@
 /* JS goes here */
 let allShows;
-//xscroll pos
-let position = 0;
 
 $('document').ready(function() {
     //grab url parts
     let getUrl = window.location;
     let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-    let path = window.location.href;
-    let pathID = path.split("=")[1];
+    let actualURL = window.location.href;
+    let pathID = actualURL.split("=")[1];
 
-    //watch horizontal scroll
-    $('#shows-list-container').on('scroll', function() {
-        position = $(this).scrollLeft();
-    });
 
     $.ajax({
         type : 'GET',
@@ -23,7 +17,7 @@ $('document').ready(function() {
             let numberCaption = document.createElement('h2');
 
             //Land on home -> render 1st show, else render by id
-            if(path == baseUrl){                
+            if(actualURL == baseUrl){                
                 //toggle active class
                 $('#shows-list li').removeClass('active');
                 $('#shows-list li').first().addClass('active');
@@ -33,15 +27,20 @@ $('document').ready(function() {
                 numberCaption.setAttribute("id", "after");
                 let selectedShow = document.getElementById(response[0].id);
                 selectedShow.appendChild(numberCaption);
-
+                // document.getElementById("#shows-list-container").scrollTo(0,0);
                 setSelectedShow(response[0].id);
+
             } else {
                 //toggle active class
                 $('#shows-list li').removeClass('active');
                 $('#'+pathID).addClass('active');
 
-                //Jump to position when LI clicked
-                $('#shows-list-container').scrollLeft(sessionStorage.getItem("position"));
+                let $container = $('#shows-list-container');
+                let $scrollTo = $('#' + pathID);
+
+                $container.scrollLeft(
+                    $scrollTo.offset().left - $container.offset().left + $container.scrollLeft()
+                );
 
                 //Create number caption under active show selector
                 numberCaption.innerHTML = $('#' + pathID).index() + 1;
@@ -75,7 +74,6 @@ function handleShowsLoaded(shows){
         //save current position, href to new url, set show
         li.onclick = function() {
             location = (baseUrl + "?id=" + id);
-            sessionStorage.setItem("position", position);
             window.location =  baseUrl + '?id=' + id;
             setSelectedShow(id);
         };
