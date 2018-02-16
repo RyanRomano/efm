@@ -1,5 +1,5 @@
 /* SCSS goes here */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 body {
   width: 100%; }
@@ -20,8 +20,9 @@ body {
   width: 100%;
 }
 
-#selected-show h1, #selected-show h3 {
+#selected-show h1, #selected-show h3, #after {
   font-family: 'Open Sans', sans-serif;
+  font: bolder;
   text-align: center;
 }
 
@@ -44,6 +45,8 @@ body {
 }
 
 #shows-list {
+  display: block;
+  height: 200px;
   list-style: none; 
   margin-left: 10vw;
   margin-top: 5em;
@@ -52,11 +55,25 @@ body {
 .active {
   background: black; }
 
+#after {
+  display: block;
+  /* float: left; */
+  position: relative;
+  top: 100px;
+  font-size: 2em; 
+  /* background: orange;  */
+  font-weight: 100;
+}
+
 li {
+  vertical-align: top;
   display: inline-block;
   height: 100px;
   width: 100px;
   background: rgb(229, 229, 229);
-  margin-right: 17vw; }
+  margin-right: 17vw; 
+  justify-content: center;
+  align-items: center;
+}
 
 /*# sourceMappingURL=application.css.map */
