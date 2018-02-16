@@ -1,15 +1,21 @@
 /* JS goes here */
-var allShows;
+let allShows;
+let position = 0;
 $('document').ready(function() {
     let getUrl = window.location;
     let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
     let path = window.location.href;
     let pathID = path.split("=")[1];
 
+    $('#shows-list-container').on('scroll', function() {
+        position = $(this).scrollLeft();
+    });
+
     $.ajax({
         type : 'GET',
         url : 'http://localhost:3000/shows',
         success : function(response) {
+            
             handleShowsLoaded(response);
             if(path == baseUrl){
                 setSelectedShow(response[0].id);
@@ -19,7 +25,7 @@ $('document').ready(function() {
                 setSelectedShow(pathID);
                 $('#shows-list li').removeClass('active');
                 $('#'+pathID).addClass('active');
-
+                $('#shows-list-container').scrollLeft(localStorage.getItem("position"));
             }
         },
         error : function(xhr, textStatus, errorThrown) {
@@ -29,8 +35,8 @@ $('document').ready(function() {
 });
 
 function handleShowsLoaded(shows){
-    allShows = shows;
 
+    allShows = shows;
     for(let i=0; i < allShows.length; i++){
         let id = allShows[i].id;
         let ul = document.getElementById("shows-list");
@@ -39,11 +45,12 @@ function handleShowsLoaded(shows){
         let getUrl = window.location;
         let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
-        li.onclick = function(e) {
-            e.preventDefault();
+        li.onclick = function() {
             location = (baseUrl + "?id=" + id);
             window.location =  baseUrl + '?id=' + id;
             setSelectedShow(id);
+            console.log(position + " position at click ~~~~");
+            localStorage.setItem("position", position);
         };
 
         ul.appendChild(li);
@@ -74,7 +81,7 @@ function setSelectedShow(showID) {
 
     imageElement.setAttribute("src", showImage);
     episodesElement.innerHTML = showEpisodes + " EPISODES";
-    titleElement.innerHTML = showTitle;
+    titleElement.innerHTML = showTitle.toUpperCase();
 }
 
 
