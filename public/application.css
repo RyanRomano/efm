@@ -1,16 +1,14 @@
 /* SCSS goes here */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-*{
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+* {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 html, body {
-  width: 100%; 
-  overflow:hidden;
-  margin:0;
-  // box-sizing: border-box;
-}
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box; }
 
 #selected-show-container {
   width: 100%;
@@ -18,40 +16,34 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-}
-su
+  overflow: hidden; }
+
 #selected-show {
   width: 45%;
-  max-width: 215px;
-}
+  max-width: 215px; }
 
 #selected-show img {
-  width: 100%;
-}
+  width: 100%; }
 
 #selected-show h1, #selected-show h3, #after {
   font-family: 'Open Sans', sans-serif;
   font: bolder;
-  text-align: center;
-}
+  text-align: center; }
 
 #selected-show h1 {
   font-size: 10px;
-  margin:0;
-  padding:0;
-}
- 
+  margin: 0;
+  padding: 0; }
+
 #selected-show h3 {
   margin: .9em 0 .4em 0;
   font-size: 6px;
-  color: rgb(170, 170, 170);
-}
+  color: #aaaaaa; }
 
 #shows-list-container {
   background: white;
   position: absolute;
-  border-top: 2px solid rgb(240,240,240);
+  border-top: 2px solid #f0f0f0;
   height: 1.25em;
   min-height: 90px;
   max-height: 90px;
@@ -59,24 +51,21 @@ su
   bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
-  overflow-y: hidden;
-}
+  overflow-y: hidden; }
 
 #shows-list {
   width: 90%;
-  list-style: none; 
+  list-style: none;
   padding: 0;
-  margin: 1.5em 0 0 4em;
-}
+  margin: 1.5em 0 0 4em; }
 
 li {
   vertical-align: top;
   display: inline-block;
   width: 32px;
   height: 32px;
-  background: rgb(229, 229, 229);
-  margin-right: 3.1em; 
-}
+  background: #e5e5e5;
+  margin-right: 3.1em; }
 
 .active {
   background: black; }
@@ -86,69 +75,54 @@ li {
   display: block;
   position: relative;
   top: .8em;
-  font-size: .85em; 
+  font-size: .85em;
   width: 32px;
   margin: 0 auto;
-  font-weight: 100;
-}
-
+  font-weight: 100; }
 
 /*# sourceMappingURL=application.css.map */
-
-
 @media screen and (min-width: 980px) {
   body {
     display: flex;
-    flex-direction: column;
-  }
+    flex-direction: column; }
 
   #selected-show-container {
-    border-top: 2px solid rgb(229, 229, 229);
-    order: 2;
-
-  }
+    border-top: 2px solid #e5e5e5;
+    order: 2; }
 
   #selected-show {
     margin-top: 1.5em;
-    width: 17.5%;
-  }
+    width: 17.5%; }
 
   #selected-show h1 {
-    font-size: .9em;
-  }
+    font-size: .9em; }
 
   #selected-show h3 {
     font-size: .325em;
     margin: .45em 0 0 0;
-    padding: 0;
-  }
+    padding: 0; }
 
   #shows-list-container {
     position: initial;
     order: 1;
-    // background: green;
     width: 25em;
     margin: 0 auto;
     padding: 1.5em 0 0 2.5em;
-    border: none;
-  }
+    border: none; }
 
   #shows-list {
     text-align: center;
     margin-top: .5em;
     margin-left: 0;
-    height: 65px;
-  }
-
+    height: 65px; }
 
   li {
     height: 40px;
     width: 40px;
-    margin-right: 4em;
-  }
+    margin-right: 4em; }
 
   #after {
     font-size: 1em;
-    top: 40px;
-  }
-}
+    top: 40px; } }
+
+/*# sourceMappingURL=application.css.map */
