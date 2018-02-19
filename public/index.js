@@ -124,9 +124,7 @@ function setPageState(pathID){
         let $scrollTo = $('#' + pathID);
 
         //Scroll to target
-
         //if screen is less than 980
-
         if($(window).width() < 980) {
             $container.scrollLeft(
                 $scrollTo.offset().left - $container.offset().left - 145
