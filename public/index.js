@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 // Makes a request for Show Data, sets current show
-$('document').ready(function() {
-    let pathID = getParameterByName("id",window.location);
-    let allShows;
+let allShows;
+let pathID = getParameterByName("id",window.location);
 
+$('document').ready(function() {
     $.ajax({
         type : 'GET',
         url : '/shows',
@@ -37,7 +37,7 @@ function handleShowsLoaded(shows){
         let li = document.createElement("li");
         li.setAttribute("id", id);
 
-        // et base url
+        // Get base url
         let getUrl = window.location;
         let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
