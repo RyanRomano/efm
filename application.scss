@@ -36,7 +36,7 @@ html, body {
  
 #selected-show h3 {
   letter-spacing: 0.047em;
-  margin: .8em 0 0.4em 0;
+  margin: .8em 0 0.3em 0;
   font-size: 6px;
   color: rgb(190, 190, 190);
 }
@@ -131,7 +131,6 @@ li:last-child{
     #selected-show {
         width: 25vh;
         margin-top: -2em;
-        display: none;
     }
 
     #selected-show h1 {
