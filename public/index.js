@@ -1,9 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 // Makes a request for Show Data, sets current show
 let allShows;
-let pathID = getParameterByName("id",window.location);
 
 $('document').ready(function() {
+    let pathID = getParameterByName("id",window.location);
+
     $.ajax({
         type : 'GET',
         url : '/shows',
