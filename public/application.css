@@ -34,6 +34,7 @@ html, body {
   color: #bebebe; }
 
 #shows-list-container {
+  background: white;
   position: absolute;
   border-top: 0.125em solid #f0f0f0;
   height: 7.063em;
