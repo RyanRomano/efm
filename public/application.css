@@ -103,7 +103,8 @@ li:last-child {
 @media screen and (max-height: 450px) {
   #selected-show {
     width: 25vh;
-    margin-top: -2em; }
+    margin-top: -2em;
+    display: none; }
 
   #selected-show h1 {
     font-size: 1.9vh; }
