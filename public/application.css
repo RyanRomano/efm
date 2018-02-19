@@ -29,7 +29,7 @@ html, body {
 
 #selected-show h3 {
   letter-spacing: 0.047em;
-  margin: .8em 0 0.3em 0;
+  margin: .8em 0 0.4em 0;
   font-size: 6px;
   color: #bebebe; }
 
@@ -120,7 +120,7 @@ li:last-child {
 
   #selected-show h3 {
     font-size: 1.7vh;
-    margin: 1vh 0 .3vh 0; } }
+    margin: 1vh 0 .4vh 0; } }
 @media screen and (max-height: 275px) {
   #selected-show {
     width: 15vh;
