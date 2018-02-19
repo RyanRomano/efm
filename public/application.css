@@ -113,7 +113,8 @@ li:last-child {
 @media screen and (max-height: 350px) {
   #selected-show {
     width: 20vh;
-    margin-top: -15vh; }
+    margin-top: -15vh;
+    display: none; }
 
   #selected-show h1 {
     font-size: 1.5vh; }
@@ -124,8 +125,7 @@ li:last-child {
 @media screen and (max-height: 275px) {
   #selected-show {
     width: 15vh;
-    margin-top: -25vh;
-    display: none; }
+    margin-top: -25vh; }
 
   #selected-show h1 {
     font-size: 1vh; }
