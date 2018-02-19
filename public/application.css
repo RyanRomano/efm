@@ -68,6 +68,7 @@ li {
   margin-right: 3.1em; }
 
 li:last-child {
+  background: yellow;
   margin-right: 4em; }
 
 .active {
@@ -114,10 +115,13 @@ li:last-child {
   #after {
     font-size: 1em;
     top: 40px; } }
+@media screen and (max-height: 650px) {
+  #selected-show {
+    margin-top: -4em; } }
 @media screen and (max-height: 450px) {
   #selected-show {
     width: 25vh;
-    margin-top: -5vh; }
+    margin-top: 0em; }
 
   #selected-show h1 {
     font-size: 2.5vh; }

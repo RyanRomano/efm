@@ -81,6 +81,7 @@ li {
 }
 
 li:last-child{
+  background: yellow;
   margin-right: 4em;
 }
 
@@ -114,7 +115,6 @@ li:last-child{
 
   #selected-show {
     margin-top: -8em;
-
   }
 
   #shows-list-container {
@@ -130,12 +130,6 @@ li:last-child{
     text-align: center;
     padding-top: 2.3em;
     padding-left: 1em;
-    // margin-left: 1em;
-    // margin-left: 0em;
-    // padding-right: 1em;
-
-    // padding-left: 3em;
-    // height: 65px;
   }
 
   #shows-list li:first-child {
@@ -148,11 +142,17 @@ li:last-child{
   }
 }
 
+@media screen and (max-height: 650px) {
+
+  #selected-show {
+    margin-top: -4em;
+  }
+}
 
 @media screen and (max-height: 450px) {
     #selected-show {
         width: 25vh;
-        margin-top: -5vh;
+        margin-top: 0em;
     }
 
     #selected-show h1 {
