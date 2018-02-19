@@ -45,7 +45,7 @@ function handleShowsLoaded(shows){
         li.onclick = function() {
             location = (baseUrl + "?id=" + id);
             window.location =  baseUrl + '?id=' + id;
-            setSelectedShow(id);
+            // setSelectedShow(id);
         };
 
         // Add to show selector list of [] [] [] ...
@@ -120,13 +120,22 @@ function setPageState(pathID){
         $('#'+pathID).addClass('active');
 
         //Get target container and target scroll location
-        let $container = $('#shows-list-container');
+        let $container = $('#shows-list');
         let $scrollTo = $('#' + pathID);
 
         //Scroll to target
-        $container.scrollLeft(
-            $scrollTo.offset().left - $container.offset().left - 145
-        );
+
+        //if screen is less than 980
+
+        if($(window).width() < 980) {
+            $container.scrollLeft(
+                $scrollTo.offset().left - $container.offset().left - 145
+            );
+        } else {
+            $container.scrollLeft(
+                $scrollTo.offset().left - $container.offset().left - 150
+            );
+        }
 
         //Create number caption under active show selector
         numberCaption.innerHTML = $('#' + pathID).index() + 1;
