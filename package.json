@@ -6,7 +6,7 @@
   "author": "Omar Delarosa <thedelarosa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "json-server --watch shows.json",
+    "start-api": "json-server --watch shows.json",
     "sass": "sass --watch application.scss:public/application.css"
   },
   "dependencies": {
